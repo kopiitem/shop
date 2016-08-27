@@ -14,12 +14,12 @@ import java.util.Collection;
  * Created by DonnyLies on 7/25/2016.
  */
 
-@FeignClient(name = "product-service", fallback = ProductsServiceClientImpl.class)
+@FeignClient(name = "product-service")
 public interface ProductsServiceClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/categories/search/by-name?name={name}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    String getCategoryByName(@PathVariable("name") String name);
+    Collection<Category> getCategoryByName(@PathVariable("name") String name);
 
 }
 

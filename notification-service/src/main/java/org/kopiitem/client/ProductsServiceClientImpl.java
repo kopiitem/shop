@@ -14,7 +14,7 @@ import java.util.Collection;
 @Component
 public class ProductsServiceClientImpl implements ProductsServiceClient {
     @Override
-    public String getCategoryByName(@PathVariable("name") String name) {
-        return "";//new ArrayList<>();
+    public Collection<Category> getCategoryByName(@PathVariable("name") String name) {
+        return new ArrayList<>();
     }
 }

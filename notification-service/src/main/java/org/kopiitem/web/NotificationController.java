@@ -19,7 +19,7 @@ public class NotificationController {
     NotificationService notificationService;
 
     @RequestMapping("/getCategoryByName")
-    String getCategoryByName() {
+    Collection<Category> getCategoryByName() {
         return notificationService.getProductServiceClient().getCategoryByName("fish");
     }
 }
